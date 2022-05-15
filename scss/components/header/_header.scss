@@ -1,0 +1,26 @@
+/**=======================================================**
+                        HEADER SECTION START
+**=======================================================**/
+
+.header {
+	padding: length(10) length(8);
+	position: fixed;
+	@include w100;
+	top: 0;
+	left: 0;
+	height: length(68);
+	transition: ease $time;
+	z-index: 9999;
+
+	@include breakpoint(mobile576) {
+		height: length(80);
+	}
+
+	@include breakpoint(tab992) {
+		height: length(100);
+	}
+}
+
+/**=======================================================**
+                        HEADER SECTION END
+**=======================================================**/

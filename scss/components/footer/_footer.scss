@@ -1,0 +1,104 @@
+/**=====================================================
+                FOOTER SECTION START
+=====================================================**/
+
+.footer {
+  padding: length(48) length(8) length(0);
+  background: $white;
+
+  &-top {
+    padding: length(0) length(8) length(48);
+
+    .footerinfo {
+      @include flex-column;
+      gap: length(24);
+
+      .footerlogo {
+        width: length(160);
+        height: length(64);
+        @include flex-center;
+        overflow: hidden;
+
+        img {
+          max-width: 100%;
+          object-fit: contain;
+        }
+      }
+
+      .contactinfo {
+        @include flex-column;
+        gap: length(8);
+
+        &-header {
+          .contactinfotitle {
+            @include font-face($primaryFont, style('normal'), size(14), weight('normal'), line-height(19.6, 14));
+            color: $gray-1;
+
+            span {
+              color: $primary;
+              font: inherit;
+            }
+          }
+        }
+
+        &-body {
+          .contactlink {
+            @include font-face($primaryFont, style('normal'), size(20), weight('medium'), line-height(28, 20));
+            color: $footer-heading;
+            @include transitionscolor;
+
+            @include hover {
+              color: $primary;
+            }
+          }
+        }
+      }
+
+      .social-list {
+        @include list-horizontal;
+        gap: length(24);
+
+        &-link {
+          @include square(length(22));
+          @include flex-center;
+          overflow: hidden;
+
+          svg {
+            @include wh100;
+            
+            path {
+              @include transitionsall;
+            }
+          }
+
+          @include hover {
+            svg {
+              path {
+                fill: $primary;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+	&-bottom {
+    padding: length(16);
+    background: $copyrightbg;
+
+    .copyright {
+      @include flex-center;
+      text-align: center;
+
+      &-text {
+        color: $border-1;
+        @include font-face($primaryFont, style('normal'), size(16), weight('normal'), line-height(22.4, 16));
+      }
+    }
+  }
+}
+
+/**=====================================================
+                FOOTER SECTION END
+=====================================================**/
