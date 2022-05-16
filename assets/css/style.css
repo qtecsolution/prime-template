@@ -64,6 +64,13 @@ TABLE OF CONTENT
                 ANIMATION-STYLES
 =======================================================**/
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700&family=Roboto:wght@100;300;400;500;700&display=swap");
+.header-nav .headerlist .user-item .userdropdown, .header-nav .headerlist .notification-item .notificationdropdown {
+  -webkit-animation-duration: 250ms;
+          animation-duration: 250ms;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+}
+
 @-webkit-keyframes slideDownIn {
   0% {
     transform: translateY(-100%);
@@ -75,6 +82,7 @@ TABLE OF CONTENT
     transform: translateY(-100%);
   }
 }
+
 @keyframes slideDownIn {
   0% {
     transform: translateY(-100%);
@@ -130,6 +138,11 @@ TABLE OF CONTENT
     transform: translateY(1.25rem);
   }
 }
+.header-nav .headerlist .user-item .userdropdown, .header-nav .headerlist .notification-item .notificationdropdown {
+  -webkit-animation-name: slideUpIn;
+          animation-name: slideUpIn;
+}
+
 @-webkit-keyframes slideUpInMobile {
   0% {
     transform: translateY(2.5rem);
@@ -141,6 +154,7 @@ TABLE OF CONTENT
     transform: translateY(2.5rem);
   }
 }
+
 @keyframes slideUpInMobile {
   0% {
     transform: translateY(2.5rem);
@@ -458,6 +472,7 @@ section {
 html {
   font-size: 100%;
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 /**=====================================================**
@@ -469,7 +484,6 @@ body {
   padding: 0;
   position: relative;
   overflow-x: hidden;
-  overflow-y: scroll;
 }
 
 a {
@@ -598,16 +612,31 @@ select {
 }
 .footer-top .footerinfo {
   display: flex;
+  align-items: center;
+  justify-content: center;
   flex-direction: column;
   gap: 1.5rem;
+  text-align: center;
+}
+@media screen and (min-width: 62rem) {
+  .footer-top .footerinfo {
+    align-items: flex-start;
+    text-align: left;
+  }
 }
 .footer-top .footerinfo .footerlogo {
-  width: 10rem;
-  height: 4rem;
+  width: 8.125rem;
+  height: 3rem;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
+}
+@media screen and (min-width: 22.5rem) {
+  .footer-top .footerinfo .footerlogo {
+    width: 10rem;
+    height: 4rem;
+  }
 }
 .footer-top .footerinfo .footerlogo img {
   max-width: 100%;
@@ -622,23 +651,42 @@ select {
 .footer-top .footerinfo .contactinfo-header .contactinfotitle {
   font-family: "Roboto";
   font-style: normal;
-  font-size: 0.875rem;
+  font-size: 0.75rem;
   font-weight: normal;
   line-height: 1.4;
   color: hsl(0deg, 0%, 53%);
+}
+@media screen and (min-width: 22.5rem) {
+  .footer-top .footerinfo .contactinfo-header .contactinfotitle {
+    font-family: "Roboto";
+    font-style: normal;
+    font-size: 0.875rem;
+    font-weight: normal;
+    line-height: 1.4;
+  }
 }
 .footer-top .footerinfo .contactinfo-header .contactinfotitle span {
   color: hsl(1deg, 71%, 54%);
   font: inherit;
 }
 .footer-top .footerinfo .contactinfo-body .contactlink {
+  color: hsl(240deg, 3%, 13%);
   font-family: "Roboto";
   font-style: normal;
-  font-size: 1.25rem;
+  font-size: 1.125rem;
   font-weight: 500;
   line-height: 1.4;
-  color: hsl(240deg, 3%, 13%);
+  letter-spacing: -0.014488625rem;
   transition: color 250ms ease-in-out;
+}
+@media screen and (min-width: 75rem) {
+  .footer-top .footerinfo .contactinfo-body .contactlink {
+    font-family: "Roboto";
+    font-style: normal;
+    font-size: 1.25rem;
+    font-weight: 500;
+    line-height: 1.4;
+  }
 }
 .footer-top .footerinfo .contactinfo-body .contactlink:not([disabled]):hover {
   color: hsl(1deg, 71%, 54%);
@@ -669,9 +717,127 @@ select {
 .footer-top .footerinfo .social-list-link:not([disabled]):hover svg path {
   fill: hsl(1deg, 71%, 54%);
 }
+.footer-top .footer-info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 1.5rem;
+  text-align: center;
+}
+@media screen and (min-width: 62rem) {
+  .footer-top .footer-info {
+    align-items: flex-start;
+    text-align: left;
+  }
+}
+.footer-top .footer-info-header .footerinfo-title {
+  color: hsl(240deg, 3%, 13%);
+  font-family: "Roboto";
+  font-style: normal;
+  font-size: 1.125rem;
+  font-weight: 500;
+  line-height: 1.4;
+  letter-spacing: -0.014488625rem;
+}
+@media screen and (min-width: 75rem) {
+  .footer-top .footer-info-header .footerinfo-title {
+    font-family: "Roboto";
+    font-style: normal;
+    font-size: 1.25rem;
+    font-weight: 500;
+    line-height: 1.4;
+  }
+}
+.footer-top .footer-info-body .footerinfo-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+.footer-top .footer-info-body .footerinfo-list-link {
+  color: hsl(0deg, 0%, 38%);
+  font-family: "Roboto";
+  font-style: normal;
+  font-size: 0.875rem;
+  font-weight: normal;
+  line-height: 1.4;
+  letter-spacing: -0.0127840625rem;
+  position: relative;
+}
+@media screen and (min-width: 75rem) {
+  .footer-top .footer-info-body .footerinfo-list-link {
+    font-family: "Roboto";
+    font-style: normal;
+    font-size: 1rem;
+    font-weight: normal;
+    line-height: 1.4;
+  }
+}
+.footer-top .footer-info-body .footerinfo-list-link::before {
+  content: "";
+  position: absolute;
+  bottom: 0.0625rem;
+  left: 0;
+  height: 0.125rem;
+  width: 0;
+  background: hsl(1deg, 71%, 54%);
+  transition: all 250ms ease-in-out;
+}
+.footer-top .footer-info-body .footerinfo-list-link:not([disabled]):hover {
+  color: hsl(1deg, 71%, 54%);
+}
+.footer-top .footer-info-body .footerinfo-list-link:not([disabled]):hover::before {
+  width: 100%;
+}
+.footer-top .footer-info-body .address {
+  color: hsl(0deg, 0%, 38%);
+  font-family: "Roboto";
+  font-style: normal;
+  font-size: 0.875rem;
+  font-weight: normal;
+  line-height: 1.4;
+  letter-spacing: -0.0127840625rem;
+}
+@media screen and (min-width: 75rem) {
+  .footer-top .footer-info-body .address {
+    font-family: "Roboto";
+    font-style: normal;
+    font-size: 1rem;
+    font-weight: normal;
+    line-height: 1.4;
+  }
+}
+.footer-top .footer-info-body .download-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+.footer-top .footer-info-body .download-list-link {
+  border-radius: 0.3125rem;
+  border-radius: 0.3125rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 10rem;
+  height: 3rem;
+  overflow: hidden;
+}
+.footer-top .footer-info-body .download-list-link img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
 .footer-bottom {
   padding: 1rem;
   background: hsl(0deg, 0%, 96%);
+  margin: 0rem -0.75rem;
 }
 .footer-bottom .copyright {
   display: flex;
@@ -683,9 +849,19 @@ select {
   color: hsl(0deg, 0%, 69%);
   font-family: "Roboto";
   font-style: normal;
-  font-size: 1rem;
+  font-size: 0.875rem;
   font-weight: normal;
   line-height: 1.4;
+  letter-spacing: -0.0127840625rem;
+}
+@media screen and (min-width: 75rem) {
+  .footer-bottom .copyright-text {
+    font-family: "Roboto";
+    font-style: normal;
+    font-size: 1rem;
+    font-weight: normal;
+    line-height: 1.4;
+  }
 }
 
 /**=====================================================
@@ -694,6 +870,21 @@ select {
 /**=======================================================**
                         GAP SECTION START
 **=======================================================**/
+.gap {
+  height: 3.5625rem;
+  position: relative;
+}
+@media screen and (min-width: 22.5rem) {
+  .gap {
+    height: 4rem;
+  }
+}
+@media screen and (min-width: 62rem) {
+  .gap {
+    height: 5rem;
+  }
+}
+
 /**=======================================================**
                         GAP SECTION END
 **=======================================================**/
@@ -701,23 +892,422 @@ select {
                         HEADER SECTION START
 **=======================================================**/
 .header {
-  padding: 0.625rem 0.5rem;
-  position: fixed;
+  background: hsl(0deg, 0%, 100%);
   width: 100%;
+  display: flex;
+  align-items: center;
+  transition: ease 250ms;
+}
+.header.sticky-header {
+  position: fixed;
   top: 0;
   left: 0;
-  height: 4.25rem;
-  transition: ease 250ms;
   z-index: 9999;
 }
-@media screen and (min-width: 36rem) {
-  .header {
-    height: 5rem;
+.header-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2.5rem;
+}
+.header-nav .hamburger {
+  order: 0;
+}
+.header-nav .hamburger .btn-hamburger {
+  height: 1rem;
+  width: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+}
+@media screen and (min-width: 22.5rem) {
+  .header-nav .hamburger .btn-hamburger {
+    height: 1.25rem;
+    width: 1.25rem;
+  }
+}
+.header-nav .hamburger .btn-hamburger svg {
+  width: 100%;
+  height: 100%;
+}
+.header-nav .hamburger .btn-hamburger svg path {
+  fill: hsl(60deg, 1%, 15%);
+}
+@media screen and (min-width: 62rem) {
+  .header-nav .hamburger {
+    display: none;
+  }
+}
+.header-nav .logo {
+  order: 1;
+  width: 8.125rem;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+@media screen and (min-width: 22.5rem) {
+  .header-nav .logo {
+    width: 8.75rem;
+    height: 3rem;
   }
 }
 @media screen and (min-width: 62rem) {
-  .header {
-    height: 6.25rem;
+  .header-nav .logo {
+    order: 0;
+    width: 10rem;
+    height: 4rem;
+  }
+}
+.header-nav .logo img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.header-nav .desktopsearch {
+  flex-grow: 100;
+  display: none;
+}
+@media screen and (min-width: 62rem) {
+  .header-nav .desktopsearch {
+    display: block;
+  }
+}
+.header-nav .desktopsearch .searchbox {
+  display: flex;
+  align-items: center;
+  border: solid 0.125rem hsl(1deg, 71%, 54%);
+  border-radius: 0.625rem;
+  border-radius: 0.625rem;
+  height: 2.5rem;
+  overflow: hidden;
+}
+.header-nav .desktopsearch .searchbox .searchfield {
+  width: calc(100% - 4.25rem);
+  padding: 0.6875rem 1rem;
+  background: transparent;
+  color: hsl(240deg, 3%, 13%);
+  font-family: "Roboto";
+  font-style: normal;
+  font-size: 1rem;
+  font-weight: normal;
+  line-height: 1.4;
+}
+.header-nav .desktopsearch .searchbox .searchfield::-moz-placeholder {
+  color: hsl(0deg, 0%, 84%);
+}
+.header-nav .desktopsearch .searchbox .searchfield:-ms-input-placeholder {
+  color: hsl(0deg, 0%, 84%);
+}
+.header-nav .desktopsearch .searchbox .searchfield::placeholder {
+  color: hsl(0deg, 0%, 84%);
+}
+.header-nav .desktopsearch .searchbox .btn-search {
+  width: 4.25rem;
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: hsl(1deg, 71%, 54%);
+}
+.header-nav .headerlist {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  order: 2;
+}
+@media screen and (min-width: 62rem) {
+  .header-nav .headerlist {
+    gap: 1.5rem;
+  }
+}
+.header-nav .headerlist-item:not([disabled]):hover .headerlist-link svg path {
+  fill: hsl(1deg, 71%, 54%);
+}
+.header-nav .headerlist-link {
+  position: relative;
+  background: transparent;
+  border: none;
+  padding: 1.4375rem 0rem;
+}
+@media screen and (min-width: 62rem) {
+  .header-nav .headerlist-link {
+    padding: 1.71875rem 0rem;
+  }
+}
+.header-nav .headerlist-link .icon {
+  height: 1.125rem;
+  width: 1.125rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@media screen and (min-width: 48rem) {
+  .header-nav .headerlist-link .icon {
+    height: 1.5625rem;
+    width: 1.5625rem;
+  }
+}
+.header-nav .headerlist-link .icon svg {
+  width: 100%;
+  height: 100%;
+}
+.header-nav .headerlist-link .cartcounter {
+  background: hsl(60deg, 1%, 15%);
+  color: hsl(0deg, 0%, 100%);
+  border-radius: 100%;
+  height: 1rem;
+  width: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Roboto";
+  font-style: normal;
+  font-size: 0.5625rem;
+  font-weight: normal;
+  line-height: 1;
+  position: absolute;
+  top: 0.625rem;
+  right: -0.625rem;
+  padding: 0.25rem;
+  text-align: center;
+}
+@media screen and (min-width: 22.5rem) {
+  .header-nav .headerlist-link .cartcounter {
+    height: 1.125rem;
+    width: 1.125rem;
+  }
+}
+@media screen and (min-width: 62rem) {
+  .header-nav .headerlist-link .cartcounter {
+    top: 1rem;
+  }
+}
+.header-nav .headerlist .notification-item {
+  position: relative;
+}
+.header-nav .headerlist .notification-item:not([disabled]):hover .notificationdropdown {
+  display: block;
+}
+.header-nav .headerlist .notification-item .notificationdropdown {
+  position: absolute;
+  top: 100%;
+  right: 0rem;
+  background: hsl(0deg, 0%, 96%);
+  filter: drop-shadow(0rem 0.9375rem 1.875rem rgba(0, 0, 0, 0.15));
+  min-width: 18.75rem;
+  max-width: 18.75rem;
+  z-index: 100;
+  display: none;
+}
+@media screen and (min-width: 36rem) {
+  .header-nav .headerlist .notification-item .notificationdropdown {
+    right: 0rem;
+  }
+}
+.header-nav .headerlist .notification-item .notificationdropdown .emptynotification-header {
+  padding: 1rem 1.25rem;
+  background: hsl(0deg, 0%, 92%);
+}
+.header-nav .headerlist .notification-item .notificationdropdown .emptynotification-header .notification-title {
+  color: hsl(195deg, 11%, 15%);
+  font-family: "Roboto";
+  font-style: normal;
+  font-size: 1.125rem;
+  font-weight: 600;
+  line-height: 1.4;
+}
+.header-nav .headerlist .notification-item .notificationdropdown .emptynotification-body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 0.5rem;
+  text-align: center;
+  padding: 3rem;
+}
+.header-nav .headerlist .notification-item .notificationdropdown .emptynotification-body .notification-text {
+  color: hsl(0deg, 0%, 53%);
+  font-family: "Roboto";
+  font-style: normal;
+  font-size: 1rem;
+  font-weight: normal;
+  line-height: 1.4;
+}
+.header-nav .headerlist .notification-item .notificationdropdown .notification-header {
+  padding: 1rem 1.25rem;
+  background: hsl(0deg, 0%, 92%);
+}
+.header-nav .headerlist .notification-item .notificationdropdown .notification-header .notification-title {
+  color: hsl(195deg, 11%, 15%);
+  font-family: "Roboto";
+  font-style: normal;
+  font-size: 1.125rem;
+  font-weight: 600;
+  line-height: 1.4;
+}
+.header-nav .headerlist .notification-item .notificationdropdown .notification-body .notificationlist {
+  max-height: 23.3125rem;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+.header-nav .headerlist .notification-item .notificationdropdown .notification-body .notificationlist::-webkit-scrollbar {
+  background: transparent;
+  width: 0.5rem;
+}
+.header-nav .headerlist .notification-item .notificationdropdown .notification-body .notificationlist::-webkit-scrollbar-thumb {
+  background: hsl(0deg, 0%, 77%);
+  border-radius: 0.5rem;
+  border-radius: 0.5rem;
+}
+.header-nav .headerlist .notification-item .notificationdropdown .notification-body .notificationlist-item {
+  background: hsl(220deg, 20%, 97%);
+  border-bottom: solid 0.03125rem hsl(252deg, 8%, 88%);
+  padding: 1rem 1.25rem;
+  transition: background 250ms ease-in-out;
+}
+.header-nav .headerlist .notification-item .notificationdropdown .notification-body .notificationlist-item:last-of-type {
+  border-bottom: 0;
+}
+.header-nav .headerlist .notification-item .notificationdropdown .notification-body .notificationlist-item:not([disabled]):hover {
+  background: hsl(0deg, 0%, 100%);
+}
+.header-nav .headerlist .notification-item .notificationdropdown .notification-body .notificationlist-link {
+  display: flex;
+  align-items: center;
+  align-items: flex-start;
+  gap: 1rem;
+}
+.header-nav .headerlist .notification-item .notificationdropdown .notification-body .notificationlist-link .notification-thumbnail {
+  height: 3.75rem;
+  width: 3.75rem;
+  border-radius: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.header-nav .headerlist .notification-item .notificationdropdown .notification-body .notificationlist-link .notification-thumbnail img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.header-nav .headerlist .notification-item .notificationdropdown .notification-body .notificationlist-link .notification-details {
+  width: calc(100% - 4.75rem);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.header-nav .headerlist .notification-item .notificationdropdown .notification-body .notificationlist-link .notification-details .notification-text {
+  color: hsl(216deg, 6%, 15%);
+  font-family: "Roboto";
+  font-style: normal;
+  font-size: 0.75rem;
+  font-weight: normal;
+  line-height: 1.4;
+}
+.header-nav .headerlist .notification-item .notificationdropdown .notification-body .notificationlist-link .notification-details .notification-date {
+  color: hsl(0deg, 0%, 69%);
+  font-family: "Roboto";
+  font-style: normal;
+  font-size: 0.75rem;
+  font-weight: normal;
+  line-height: 1.4;
+}
+.header-nav .headerlist .notification-item .notificationdropdown .notification-footer {
+  background: hsl(0deg, 0%, 100%);
+  border-bottom-left-radius: 0.625rem;
+  border-bottom-right-radius: 0.625rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.25rem;
+  text-align: center;
+}
+.header-nav .headerlist .notification-item .notificationdropdown .notification-footer .btn-viewall {
+  color: hsl(216deg, 6%, 15%);
+  font-family: "Roboto";
+  font-style: normal;
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.4;
+  transition: color 250ms ease-in-out;
+}
+.header-nav .headerlist .notification-item .notificationdropdown .notification-footer .btn-viewall:not([disabled]):hover {
+  color: hsl(1deg, 71%, 54%);
+}
+.header-nav .headerlist .user-item {
+  position: relative;
+}
+.header-nav .headerlist .user-item:not([disabled]):hover .userdropdown {
+  display: block;
+}
+.header-nav .headerlist .user-item .userdropdown {
+  position: absolute;
+  top: 100%;
+  right: 0rem;
+  background: hsl(0deg, 0%, 100%);
+  filter: drop-shadow(0rem 0.9375rem 1.875rem rgba(0, 0, 0, 0.15));
+  min-width: 10rem;
+  max-width: 12.5rem;
+  z-index: 100;
+  display: none;
+}
+@media screen and (min-width: 36rem) {
+  .header-nav .headerlist .user-item .userdropdown {
+    right: 0rem;
+  }
+}
+.header-nav .headerlist .user-item .userdropdown .dropdownlist {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+}
+.header-nav .headerlist .user-item .userdropdown .dropdownlist-link {
+  color: hsl(0deg, 0%, 38%);
+  font-family: "Roboto";
+  font-style: normal;
+  font-size: 0.75rem;
+  font-weight: 500;
+  line-height: 1.4;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  width: 100%;
+  padding: 0.5rem;
+}
+.header-nav .headerlist .user-item .userdropdown .dropdownlist-link .icon {
+  height: 1rem;
+  width: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.header-nav .headerlist .user-item .userdropdown .dropdownlist-link .icon svg {
+  width: 100%;
+  height: 100%;
+}
+.header-nav .headerlist .user-item .userdropdown .dropdownlist-link:not([disabled]):hover {
+  background: hsl(220deg, 20%, 97%);
+}
+.header-nav .headerlist .search-item {
+  display: block;
+}
+@media screen and (min-width: 62rem) {
+  .header-nav .headerlist .search-item {
+    display: none;
   }
 }
 
@@ -759,7 +1349,6 @@ select {
 .offcanvas {
   width: 100%;
   min-height: 110vh;
-  overflow: hidden;
 }
 @media screen and (min-width: 31.25rem) {
   .offcanvas {
@@ -768,8 +1357,11 @@ select {
 }
 .offcanvas-header {
   position: relative;
+  justify-content: flex-start;
 }
 .offcanvas-header .logo {
+  width: 8.75rem;
+  height: 3rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -778,12 +1370,12 @@ select {
 .offcanvas-header .logo img {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 .offcanvas-header .btn-close {
-  height: 1.5rem;
-  width: 1.5rem;
+  height: 2.25rem;
+  width: 2.25rem;
   background: transparent;
   margin: 0;
   padding: 0;
@@ -806,16 +1398,105 @@ select {
   box-shadow: none;
   outline: none;
 }
+.offcanvas-header .btn-close:not([disabled]):hover svg path {
+  stroke: hsl(1deg, 71%, 54%);
+}
+.offcanvas-header .cart-title {
+  color: hsl(0deg, 0%, 38%);
+  font-family: "Roboto";
+  font-style: normal;
+  font-size: 1.25rem;
+  font-weight: normal;
+  line-height: 1.4;
+}
 .offcanvas-body {
   overflow-x: hidden;
   padding-top: 0rem;
   display: flex;
   flex-direction: column;
+  padding: 1.5rem;
 }
 .offcanvas-body::-webkit-scrollbar {
   background: transparent;
   width: 0.5rem;
 }
+.offcanvas-body::-webkit-scrollbar-thumb {
+  background: hsl(0deg, 0%, 77%);
+  border-radius: 0.5rem;
+  border-radius: 0.5rem;
+}
+.offcanvas-body .searchinfo {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+.offcanvas-body .searchinfo .searchbox {
+  display: flex;
+  align-items: center;
+  border: solid 0.125rem hsl(1deg, 71%, 54%);
+  border-radius: 0.625rem;
+  border-radius: 0.625rem;
+  height: 2.5rem;
+  overflow: hidden;
+  width: calc(100% - 3.75rem);
+}
+.offcanvas-body .searchinfo .searchbox .searchfield {
+  width: calc(100% - 4.25rem);
+  padding: 0.6875rem 1rem;
+  background: transparent;
+  color: hsl(240deg, 3%, 13%);
+  font-family: "Roboto";
+  font-style: normal;
+  font-size: 1rem;
+  font-weight: normal;
+  line-height: 1.4;
+}
+.offcanvas-body .searchinfo .searchbox .searchfield::-moz-placeholder {
+  color: hsl(0deg, 0%, 84%);
+}
+.offcanvas-body .searchinfo .searchbox .searchfield:-ms-input-placeholder {
+  color: hsl(0deg, 0%, 84%);
+}
+.offcanvas-body .searchinfo .searchbox .searchfield::placeholder {
+  color: hsl(0deg, 0%, 84%);
+}
+.offcanvas-body .searchinfo .searchbox .btn-search {
+  width: 4.25rem;
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: hsl(1deg, 71%, 54%);
+}
+.offcanvas-body .searchinfo .btn-close {
+  height: 2.25rem;
+  width: 2.25rem;
+  background: transparent;
+  margin: 0;
+  padding: 0;
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100%;
+  opacity: 1;
+}
+.offcanvas-body .searchinfo .btn-close svg {
+  width: 100%;
+  height: 100%;
+  transition: transform 250ms ease-in-out;
+}
+.offcanvas-body .searchinfo .btn-close svg path {
+  transition: all 250ms ease-in-out;
+}
+.offcanvas-body .searchinfo .btn-close:focus {
+  box-shadow: none;
+  outline: none;
+}
+.offcanvas-body .searchinfo .btn-close:not([disabled]):hover svg path {
+  stroke: hsl(1deg, 71%, 54%);
+}
+
 /**=====================================================
                 OFFCANVAS END
 =====================================================**/
@@ -828,7 +1509,7 @@ select {
   justify-content: center;
   position: fixed;
   width: 100%;
-  min-height: 100vh;
+  min-height: 100%;
   overflow: hidden;
   z-index: 10000;
   background: hsl(0deg, 0%, 100%);
@@ -994,7 +1675,7 @@ select {
   font-style: normal;
   font-size: 0.75rem;
   font-weight: normal;
-  line-height: 1.4;
+  line-height: 1.1666666667;
   color: hsl(0deg, 0%, 96%);
 }
 .topbar-nav .topbar-list-link:not([disabled]):hover .icon .phoneicon path {
@@ -1049,7 +1730,7 @@ select {
   font-style: normal;
   font-size: 0.75rem;
   font-weight: normal;
-  line-height: 1.4;
+  line-height: 1.1666666667;
   color: hsl(0deg, 0%, 96%);
 }
 .topbar-nav .top-list-link:not([disabled]):hover .icon svg path {

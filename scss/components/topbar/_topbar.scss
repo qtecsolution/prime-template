@@ -46,7 +46,7 @@
         }
 
         .linktext {
-          @include font-face($primaryFont, style('normal'), size(12), weight('normal'), line-height(16.8, 12));
+          @include font-face($primaryFont, style('normal'), size(12), weight('normal'), line-height(14, 12));
           color: $copyrightbg;
         }
 
@@ -105,7 +105,7 @@
         }
 
         .linktext {
-          @include font-face($primaryFont, style('normal'), size(12), weight('normal'), line-height(16.8, 12));
+          @include font-face($primaryFont, style('normal'), size(12), weight('normal'), line-height(14, 12));
           color: $copyrightbg;
         }
 

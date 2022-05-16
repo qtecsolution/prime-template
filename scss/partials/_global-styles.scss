@@ -129,6 +129,7 @@ section {
 html {
 	font-size: 100%;
 	scroll-behavior: smooth;
+	overflow-x: hidden;
 }
 
 
@@ -142,7 +143,6 @@ body {
 	padding: 0;
 	position: relative;
 	overflow-x: hidden;
-	overflow-y: scroll;
 }
 
 a {

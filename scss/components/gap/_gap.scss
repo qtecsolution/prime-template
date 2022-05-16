@@ -3,15 +3,16 @@
 **=======================================================**/
 
 .gap {
-	// height: length(68);
+	height: length(57);
+	position: relative;
 
-	// @include breakpoint(mobile576) {
-	// 	height: length(80);
-	// }
+	@include breakpoint(mobile360) {
+		height: length(64);
+	}
 
-	// @include breakpoint(tab992) {
-	// 	height: length(100);
-	// }
+	@include breakpoint(tab992) {
+		height: length(80);
+	}
 }
 
 /**=======================================================**

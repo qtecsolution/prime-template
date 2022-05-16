@@ -21,7 +21,6 @@
 .offcanvas {
 	@include w100;
 	min-height: 110vh;
-	overflow: hidden;
 
 	@include breakpoint(mobile500) {
 		width: length(300);
@@ -29,19 +28,22 @@
 
 	&-header {
 		position: relative;
+		justify-content: flex-start;
 
 		.logo {
+			width: length(140);
+			height: length(48);
 			@include flex-center;
 			overflow: hidden;
 
 			img {
 				@include wh100;
-				object-fit: cover;
+				object-fit: contain;
 			}
 		}
 
 		.btn-close {
-			@include square(length(24));
+			@include square(length(36));
 			background: transparent;
 			margin: 0;
 			padding: 0;
@@ -67,10 +69,15 @@
 			@include hover {
 				svg {
 					path {
-						
+						stroke: $primary;
 					}
 				}
 			}
+		}
+
+		.cart-title {
+			color: $text-primary;
+      @include font-face($primaryFont, style('normal'), size(20), weight('normal'), line-height(28, 20));
 		}
 	}
 
@@ -78,6 +85,7 @@
 		overflow-x: hidden;
 		padding-top: length(0);
 		@include flex-column;
+		padding: length(24);
 
 		&::-webkit-scrollbar {
 			background: transparent;
@@ -85,7 +93,73 @@
 		}
 
 		&::-webkit-scrollbar-thumb {
-			// background: $primary;
+			background: $profilebox;
+			@include radius(8);
+		}
+
+		.searchinfo {
+			@include flex-center-vert;
+			gap: length(24);
+
+			.searchbox{
+				@include flex-center-vert;
+				@include border(solid, 2, $primary);
+				@include radius(10);
+				height: length(40);
+				overflow: hidden;
+				width: calc(100% - 3.75rem);
+	
+				.searchfield {
+					width: calc(100% - 4.25rem);
+					padding: length(11) length(16);
+					@include setBgColor(transparent, $footer-heading);
+					@include font-face($primaryFont, style('normal'), size(16), weight('normal'), line-height(22.4, 16));
+	
+					&::placeholder {
+						color: $text-icon;
+					}
+				}
+	
+				.btn-search {
+					width: length(68);
+					height: length(40);
+					@include flex-center;
+					background: $primary;
+				}
+			}
+
+			.btn-close {
+				@include square(length(36));
+				background: transparent;
+				margin: 0;
+				padding: 0;
+				padding: length(8);
+				@include flex-center;
+				@include circle;
+				opacity: 1;
+	
+				svg {
+					@include wh100;
+					@include transitiontransform;
+	
+					path {
+						@include transitionsall;
+					}
+				}
+	
+				&:focus {
+					box-shadow: none;
+					outline: none;
+				}
+	
+				@include hover {
+					svg {
+						path {
+							stroke: $primary;
+						}
+					}
+				}
+			}
 		}
 	}
 }
