@@ -2,7 +2,143 @@
                         CARDS START
 **=======================================================**/
 
+.card-horizontal {
+  background: $white;
+  @include radius(10);
+  @include flex-center-vert;
+  align-items: flex-start;
+  gap: length(14);
+  padding: length(14);
 
+  .card-thumbnail {
+    @include square(length(96));
+    @include flex-center;
+    overflow: hidden;
+
+    img {
+      @include wh100;
+      object-fit: cover;
+    }
+  }
+
+  &-body {
+    @include flex-column;
+    gap: length(16);
+
+    .card-details {
+      @include flex-column;
+      gap: length(8);
+
+      .titlebox {
+        .cardtitle {
+          color: $text-primary;
+          @include font-face($primaryFont, style('normal'), size(14), weight('normal'), line-height(19.6, 14));
+          @include line-clamp;
+          height: length(39.19);
+          @include transitionscolor;
+  
+          @include hover {
+            color: $primary;
+          }
+        }
+      }
+
+      .pricebox {
+        .pricecount {
+          @include flex-center-vert;
+          gap: length(20);
+
+          .priceinfo {
+            span {
+              color: $border-1;
+              @include font-face($primaryFont, style('normal'), size(14), weight('normal'), line-height(19.6, 14));
+            }
+          }
+
+          .prevprice {
+            color: $border-1;
+            @include font-face($primaryFont, style('normal'), size(14), weight('normal'), line-height(19.6, 14));
+            text-decoration: line-through;
+
+            span {
+              text-decoration: line-through;
+            }
+          }
+        }
+      }
+
+      .currentprice {
+        color: $text-primary;
+        @include font-face($primaryFont, style('normal'), size(14), weight('bold'), line-height(19.6, 14));
+      }
+    }
+
+    .count-delete {
+      @include flex-center-between;
+      width: length(7rem);
+
+      .count {
+        background: $cartcounterbg;
+        @include flex-center-vert;
+        @include radius(5);
+        overflow: hidden;
+
+        .countfield {
+          @include font-face($primaryFont, style('normal'), size(14), weight('normal'), line-height(19.6, 14));
+          height: legth(32);
+          width: length(48);
+          @include setBgColor(transparent, $text-primary);
+          text-align: center;
+          padding: length(4);
+        }
+        
+        .btn-decrement,
+        .btn-increment {
+          @include square(length(32));
+          @include flex-center;
+          padding: length(12);
+
+          svg {
+            @include wh100;
+          }
+        }
+        
+        .btn-decrement {
+          background: $decrementbg;
+        }
+
+        .btn-increment {
+          background: $border-primary;
+        }
+      }
+      
+      .delete {
+        .btn-delete {
+          @include square(length(24));
+          @include flex-center;
+          @include transparent-button;
+          overflow: hidden;
+
+          svg {
+            @include wh100;
+
+            path {
+              @include transitionsall;
+            }
+          }
+
+          @include hover {
+            svg {
+              path {
+                fill: $primary;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
 
 /**=======================================================**
                         CARDS END

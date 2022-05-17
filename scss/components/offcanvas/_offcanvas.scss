@@ -19,6 +19,7 @@
 }
 
 .offcanvas {
+	background: $prime-express-bg;
 	@include w100;
 	min-height: 110vh;
 
@@ -31,7 +32,7 @@
 		justify-content: flex-start;
 
 		.logo {
-			width: length(140);
+			width: length(96);
 			height: length(48);
 			@include flex-center;
 			overflow: hidden;
@@ -161,7 +162,16 @@
 				}
 			}
 		}
+
+		.sidebarcartlist {
+			@include flex-column;
+			gap: length(14);
+		}
 	}
+}
+
+.cartoffcanvas {
+	width: length(360);
 }
 
 /**=====================================================

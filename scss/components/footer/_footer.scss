@@ -20,12 +20,18 @@
       }
 
       .footerlogo {
-        width: length(130);
+        width: length(110);
         height: length(48);
         @include flex-center;
         overflow: hidden;
-
+  
         @include breakpoint(mobile360) {
+          width: length(120);
+          height: length(48);
+        }
+        
+        @include breakpoint(tab992) {
+          order: 0;
           width: length(160);
           height: length(64);
         }
