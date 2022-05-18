@@ -681,6 +681,7 @@ select {
 **=======================================================**/
 .up-btn {
   margin-left: auto;
+  left: 100%;
   border-radius: 100%;
   padding: 0.875rem;
   display: flex;
