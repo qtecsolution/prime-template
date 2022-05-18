@@ -2,9 +2,13 @@
                     HOME-BANNER SECTION START
 **=======================================================**/
 
-// .homebanner {
-	
-// }
+.home-banner {
+  padding: length(24) length(8) length(48);
+  
+  @include breakpoint(tab992) {
+    padding: length(32) length(8) length(64);
+  }
+}
 
 /**=======================================================**
                     HOME-BANNER SECTION END

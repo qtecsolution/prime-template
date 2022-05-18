@@ -168,10 +168,141 @@
 			gap: length(14);
 		}
 	}
+
+	&-footer {
+		padding: length(8) length(24) length(104);
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		@include w100;
+		@include flex-column;
+		gap: length(32);
+		background: $prime-express-bg;
+
+		.footer-head {
+			@include flex-column;
+			gap: length(14);
+
+			.subtotal {
+				@include flex-center-between;
+				padding-bottom: length(14);
+				@include border-single(bottom, solid, 0.5, $border-1);
+
+				&-title {
+					color: $text-primary;
+					@include font-face($primaryFont, style('normal'), size(16), weight('normal'), line-height(22.4, 16));
+				}
+
+				&-price {
+					color: $dark-1;
+					@include font-face($primaryFont, style('normal'), size(16), weight('normal'), line-height(22.4, 16));
+
+					.sign,
+					.price {
+						color: inherit;
+						font: inherit;
+					}
+				}
+			}
+
+			.shippingfee {
+				@include flex-center-between;
+				padding-bottom: length(14);
+				@include border-single(bottom, solid, 0.5, $border-1);
+
+				&-title {
+					color: $text-primary;
+					@include font-face($primaryFont, style('normal'), size(16), weight('normal'), line-height(22.4, 16));
+				}
+
+				&-price {
+					color: $dark-1;
+					@include font-face($primaryFont, style('normal'), size(16), weight('normal'), line-height(22.4, 16));
+
+					.sign,
+					.price {
+						color: inherit;
+						font: inherit;
+					}
+				}
+			}
+
+			.offer {
+				@include flex-center-between;
+				padding-bottom: length(14);
+				@include border-single(bottom, solid, 0.5, $border-1);
+
+				&-title {
+					color: $text-primary;
+					@include font-face($primaryFont, style('normal'), size(16), weight('normal'), line-height(22.4, 16));
+				}
+
+				&-price {
+					color: $dark-1;
+					@include font-face($primaryFont, style('normal'), size(16), weight('normal'), line-height(22.4, 16));
+
+					.sign,
+					.price {
+						color: inherit;
+						font: inherit;
+					}
+				}
+			}
+
+			.total {
+				@include flex-center-between;
+
+				&-title {
+					color: $primary;
+					@include font-face($primaryFont, style('normal'), size(16), weight('bold'), line-height(22.4, 16));
+				}
+
+				&-price {
+					color: $primary;
+					@include font-face($primaryFont, style('normal'), size(16), weight('bold'), line-height(22.4, 16));
+
+					.sign,
+					.price {
+						color: inherit;
+						font: inherit;
+					}
+				}
+			}
+		}
+
+		.footer-body {
+			.btn-full {
+				@include setBgColor($primary, $white);
+				@include radius(10);
+				@include font-face($primaryFont, style('normal'), size(16), weight('bold'), line-height(22.4, 16));
+				@include w100;
+				display: inline-block;
+				padding: length(16);
+				text-align: center;
+				@include transitionsall;
+
+				@include hover {
+					@include setBgColor(darken($primary, 15%), rgba($white, 0.75));
+				}
+			}
+		}
+	}
 }
 
 .cartoffcanvas {
 	width: length(360);
+
+	.offcanvas-header {
+		height: length(84);
+	}
+
+	.offcanvas-body {
+		max-height: calc(100% - 31.25rem);
+	}
+
+	.offcanvas-footer {
+		height: length(393);
+	}
 }
 
 /**=====================================================

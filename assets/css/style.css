@@ -64,7 +64,7 @@ TABLE OF CONTENT
                 ANIMATION-STYLES
 =======================================================**/
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700&family=Roboto:wght@100;300;400;500;700&display=swap");
-.header-nav .headerlist .user-item .userdropdown, .header-nav .headerlist .notification-item .notificationdropdown {
+.header-nav .headerlist .user-item .userdropdown, .header-nav .headerlist .notification-item .notificationdropdown, .categories-body .sidebarlist .submenu-item .subsubmenu, .categories-body .sidebarlist .submenu {
   -webkit-animation-duration: 250ms;
           animation-duration: 250ms;
   -webkit-animation-fill-mode: both;
@@ -210,6 +210,11 @@ TABLE OF CONTENT
     transform: translateX(6.25rem);
   }
 }
+.categories-body .sidebarlist .submenu-item .subsubmenu, .categories-body .sidebarlist .submenu {
+  -webkit-animation-name: slideRightIn;
+          animation-name: slideRightIn;
+}
+
 @-webkit-keyframes floating {
   0% {
     transform: translateY(0%);
@@ -221,6 +226,7 @@ TABLE OF CONTENT
     transform: translateY(0%);
   }
 }
+
 @keyframes floating {
   0% {
     transform: translateY(0%);
@@ -846,6 +852,228 @@ select {
 /**=======================================================**
                         CARDS END
 **=======================================================**/
+/**=====================================================
+                CATEGORIES DROPDOWN START
+=====================================================**/
+.categories {
+  display: flex;
+  flex-direction: column;
+}
+.categories-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  align-items: center;
+  background: hsl(1deg, 71%, 54%);
+  padding: 0.75rem;
+}
+.categories-header .titleinfo {
+  width: calc(100% - 1.5rem);
+  display: flex;
+  align-items: center;
+  gap: 0.875rem;
+}
+.categories-header .titleinfo .icon {
+  height: 1.5rem;
+  width: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.categories-header .titleinfo .icon svg {
+  width: 100%;
+  height: 100%;
+}
+.categories-header .titleinfo .titlebox {
+  width: calc(100% - 1.5rem);
+}
+.categories-header .titleinfo .titlebox .title {
+  color: hsl(0deg, 0%, 100%);
+  font-family: "Roboto";
+  font-style: normal;
+  font-size: 0.875rem;
+  font-weight: 700;
+  line-height: 1.4;
+  letter-spacing: 0.2rem;
+  text-transform: uppercase;
+}
+.categories-header .arrowicon {
+  height: 1.5rem;
+  width: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.categories-header .arrowicon svg {
+  width: 100%;
+  height: 100%;
+}
+.categories-body .sidebarlist {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  background: hsl(0deg, 0%, 100%);
+  position: relative;
+}
+.categories-body .sidebarlist-link {
+  padding: 0.6rem 0.3125rem 0.9375rem 1.125rem;
+  display: flex;
+  align-items: center;
+  border-bottom: solid 0.03125rem hsl(0deg, 0%, 69%);
+}
+.categories-body .sidebarlist-link .icon-itemtext {
+  display: flex;
+  align-items: center;
+  width: calc(100% - 0.875rem);
+  gap: 1rem;
+}
+.categories-body .sidebarlist-link .icon-itemtext .icon {
+  height: 1.25rem;
+  width: 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.categories-body .sidebarlist-link .icon-itemtext .itemtext {
+  width: calc(100% - 1.25rem);
+}
+.categories-body .sidebarlist-link .icon-itemtext .itemtext .text {
+  color: hsl(0deg, 0%, 38%);
+  font-family: "Roboto";
+  font-style: normal;
+  font-size: 0.875rem;
+  font-weight: normal;
+  line-height: 1.4;
+}
+.categories-body .sidebarlist-link .arrow {
+  height: 0.875rem;
+  width: 0.875rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.categories-body .sidebarlist-item:last-of-type .sidebarlist-link {
+  border-bottom: 0;
+}
+.categories-body .sidebarlist-item:not([disabled]):hover .submenu {
+  display: block;
+}
+.categories-body .sidebarlist-item:not([disabled]):hover .sidebarlist-link {
+  background: #F7FAFC;
+}
+.categories-body .sidebarlist-item:not([disabled]):hover .sidebarlist-link .icon-itemtext .icon svg path {
+  fill: hsl(1deg, 71%, 54%);
+}
+.categories-body .sidebarlist-item:not([disabled]):hover .sidebarlist-link .icon-itemtext .itemtext .text {
+  color: hsl(1deg, 71%, 54%);
+}
+.categories-body .sidebarlist-item:not([disabled]):hover .sidebarlist-link .arrow svg path {
+  fill: hsl(1deg, 71%, 54%);
+}
+.categories-body .sidebarlist .submenu {
+  position: absolute;
+  top: 0;
+  left: 100%;
+  background: hsl(0deg, 0%, 100%);
+  width: 16.875rem;
+  height: 100%;
+  z-index: 100;
+  display: none;
+}
+.categories-body .sidebarlist .submenu-item {
+  list-style: none;
+}
+.categories-body .sidebarlist .submenu-item:last-child .submenu-link {
+  border-bottom: 0;
+}
+.categories-body .sidebarlist .submenu-item:not([disabled]):hover .submenu-link {
+  background: #F7FAFC;
+}
+.categories-body .sidebarlist .submenu-item:not([disabled]):hover .submenu-link .text {
+  color: hsl(1deg, 71%, 54%);
+}
+.categories-body .sidebarlist .submenu-item:not([disabled]):hover .submenu-link .arrow svg path {
+  fill: hsl(1deg, 71%, 54%);
+}
+.categories-body .sidebarlist .submenu-item:not([disabled]):hover .subsubmenu {
+  display: block;
+}
+.categories-body .sidebarlist .submenu-item .subsubmenu {
+  position: absolute;
+  top: 0;
+  left: 100%;
+  background: hsl(0deg, 0%, 100%);
+  width: 16.875rem;
+  z-index: 100;
+  display: none;
+  height: 100%;
+}
+.categories-body .sidebarlist .submenu-item .subsubmenu-item {
+  list-style: none;
+}
+.categories-body .sidebarlist .submenu-item .subsubmenu-item:not([disabled]):hover .subsubmenu-link {
+  background: #F7FAFC;
+  color: hsl(1deg, 71%, 54%);
+}
+.categories-body .sidebarlist .submenu-item .subsubmenu-item:last-child .subsubmenu-link {
+  border-bottom: 0;
+}
+.categories-body .sidebarlist .submenu-item .subsubmenu-link {
+  padding: 0.625rem 0.3125rem 0.9375rem 1.125rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  align-items: center;
+  background: hsl(0deg, 0%, 100%);
+  color: hsl(0deg, 0%, 38%);
+  border-bottom: solid 0.03125rem hsl(0deg, 0%, 69%);
+  font-family: "Roboto";
+  font-style: normal;
+  font-size: 0.875rem;
+  font-weight: normal;
+  line-height: 1.4;
+}
+.categories-body .sidebarlist .submenu-link {
+  padding: 0.625rem 0.3125rem 0.9375rem 1.125rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: solid 0.03125rem hsl(0deg, 0%, 69%);
+  background: hsl(0deg, 0%, 100%);
+}
+.categories-body .sidebarlist .submenu-link .text {
+  color: hsl(0deg, 0%, 38%);
+  font-family: "Roboto";
+  font-style: normal;
+  font-size: 0.875rem;
+  font-weight: normal;
+  line-height: 1.4;
+}
+.categories-body .sidebarlist .submenu-link .arrow {
+  height: 0.875rem;
+  width: 0.875rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.categories-body .sidebarlist::-webkit-scrollbar {
+  width: 0.5rem;
+}
+.categories-body .sidebarlist::-webkit-scrollbar-thumb {
+  background: transparent;
+}
+
+/**=====================================================
+                CATEGORIES DROPDOWN END
+=====================================================**/
 /**=====================================================
                 FOOTER SECTION START
 =====================================================**/
@@ -1755,9 +1983,168 @@ select {
   flex-direction: column;
   gap: 0.875rem;
 }
+.offcanvas-footer {
+  padding: 0.5rem 1.5rem 6.5rem;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  background: hsl(220deg, 23%, 97%);
+}
+.offcanvas-footer .footer-head {
+  display: flex;
+  flex-direction: column;
+  gap: 0.875rem;
+}
+.offcanvas-footer .footer-head .subtotal {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 0.875rem;
+  border-bottom: solid 0.03125rem hsl(0deg, 0%, 69%);
+}
+.offcanvas-footer .footer-head .subtotal-title {
+  color: hsl(0deg, 0%, 38%);
+  font-family: "Roboto";
+  font-style: normal;
+  font-size: 1rem;
+  font-weight: normal;
+  line-height: 1.4;
+}
+.offcanvas-footer .footer-head .subtotal-price {
+  color: hsl(0deg, 0%, 14%);
+  font-family: "Roboto";
+  font-style: normal;
+  font-size: 1rem;
+  font-weight: normal;
+  line-height: 1.4;
+}
+.offcanvas-footer .footer-head .subtotal-price .sign,
+.offcanvas-footer .footer-head .subtotal-price .price {
+  color: inherit;
+  font: inherit;
+}
+.offcanvas-footer .footer-head .shippingfee {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 0.875rem;
+  border-bottom: solid 0.03125rem hsl(0deg, 0%, 69%);
+}
+.offcanvas-footer .footer-head .shippingfee-title {
+  color: hsl(0deg, 0%, 38%);
+  font-family: "Roboto";
+  font-style: normal;
+  font-size: 1rem;
+  font-weight: normal;
+  line-height: 1.4;
+}
+.offcanvas-footer .footer-head .shippingfee-price {
+  color: hsl(0deg, 0%, 14%);
+  font-family: "Roboto";
+  font-style: normal;
+  font-size: 1rem;
+  font-weight: normal;
+  line-height: 1.4;
+}
+.offcanvas-footer .footer-head .shippingfee-price .sign,
+.offcanvas-footer .footer-head .shippingfee-price .price {
+  color: inherit;
+  font: inherit;
+}
+.offcanvas-footer .footer-head .offer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 0.875rem;
+  border-bottom: solid 0.03125rem hsl(0deg, 0%, 69%);
+}
+.offcanvas-footer .footer-head .offer-title {
+  color: hsl(0deg, 0%, 38%);
+  font-family: "Roboto";
+  font-style: normal;
+  font-size: 1rem;
+  font-weight: normal;
+  line-height: 1.4;
+}
+.offcanvas-footer .footer-head .offer-price {
+  color: hsl(0deg, 0%, 14%);
+  font-family: "Roboto";
+  font-style: normal;
+  font-size: 1rem;
+  font-weight: normal;
+  line-height: 1.4;
+}
+.offcanvas-footer .footer-head .offer-price .sign,
+.offcanvas-footer .footer-head .offer-price .price {
+  color: inherit;
+  font: inherit;
+}
+.offcanvas-footer .footer-head .total {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  align-items: center;
+}
+.offcanvas-footer .footer-head .total-title {
+  color: hsl(1deg, 71%, 54%);
+  font-family: "Roboto";
+  font-style: normal;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.4;
+}
+.offcanvas-footer .footer-head .total-price {
+  color: hsl(1deg, 71%, 54%);
+  font-family: "Roboto";
+  font-style: normal;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.4;
+}
+.offcanvas-footer .footer-head .total-price .sign,
+.offcanvas-footer .footer-head .total-price .price {
+  color: inherit;
+  font: inherit;
+}
+.offcanvas-footer .footer-body .btn-full {
+  background: hsl(1deg, 71%, 54%);
+  color: hsl(0deg, 0%, 100%);
+  border-radius: 0.625rem;
+  border-radius: 0.625rem;
+  font-family: "Roboto";
+  font-style: normal;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.4;
+  width: 100%;
+  display: inline-block;
+  padding: 1rem;
+  text-align: center;
+  transition: all 250ms ease-in-out;
+}
+.offcanvas-footer .footer-body .btn-full:not([disabled]):hover {
+  background: #aa1f1d;
+  color: rgba(255, 255, 255, 0.75);
+}
 
 .cartoffcanvas {
   width: 22.5rem;
+}
+.cartoffcanvas .offcanvas-header {
+  height: 5.25rem;
+}
+.cartoffcanvas .offcanvas-body {
+  max-height: calc(100% - 31.25rem);
+}
+.cartoffcanvas .offcanvas-footer {
+  height: 24.5625rem;
 }
 
 /**=====================================================
@@ -2031,6 +2418,15 @@ select {
 /**=======================================================**
                     HOME-BANNER SECTION START
 **=======================================================**/
+.home-banner {
+  padding: 1.5rem 0.5rem 3rem;
+}
+@media screen and (min-width: 62rem) {
+  .home-banner {
+    padding: 2rem 0.5rem 4rem;
+  }
+}
+
 /**=======================================================**
                     HOME-BANNER SECTION END
 **=======================================================**/
