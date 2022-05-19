@@ -101,6 +101,7 @@
 		.searchinfo {
 			@include flex-center-vert;
 			gap: length(24);
+			padding-bottom: length(16);
 
 			.searchbox{
 				@include flex-center-vert;
@@ -108,13 +109,13 @@
 				@include radius(10);
 				height: length(40);
 				overflow: hidden;
-				width: calc(100% - 3.75rem);
+				width: calc(100% - 1.75rem);
 	
 				.searchfield {
-					width: calc(100% - 4.25rem);
+					width: calc(100% - 2.5rem);
 					padding: length(11) length(16);
 					@include setBgColor(transparent, $footer-heading);
-					@include font-face($primaryFont, style('normal'), size(16), weight('normal'), line-height(22.4, 16));
+					@include font-face($primaryFont, style('normal'), size(14), weight('normal'), line-height(19.6, 14));
 	
 					&::placeholder {
 						color: $text-icon;
@@ -122,7 +123,7 @@
 				}
 	
 				.btn-search {
-					width: length(68);
+					width: length(40);
 					height: length(40);
 					@include flex-center;
 					background: $primary;
@@ -130,7 +131,7 @@
 			}
 
 			.btn-close {
-				@include square(length(36));
+				@include square(length(28));
 				background: transparent;
 				margin: 0;
 				padding: 0;
@@ -160,6 +161,31 @@
 						}
 					}
 				}
+			}
+		}
+
+		.mobile-suggestions {
+			max-height: 90%;
+			overflow-x: hidden;
+			overflow-y: scroll;
+			@extend %animation;
+			@extend %slideUpIn;
+			padding-bottom: length(24);
+			margin: length(0) length(-24);
+			display: none;
+
+			&.active {
+				@include flex-column;
+			}
+
+			&::-webkit-scrollbar {
+				background: transparent;
+				width: length(8);
+			}
+	
+			&::-webkit-scrollbar-thumb {
+				background: $profilebox;
+				@include radius(8);
 			}
 		}
 

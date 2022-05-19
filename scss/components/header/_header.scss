@@ -6,7 +6,7 @@
 	background: $white;
 	@include w100;
 	@include flex-center-vert;
-	transition: ease $time;
+	transition: top $time;
 
 	&.sticky-header {
 		position: fixed;
@@ -72,6 +72,7 @@
 		.desktopsearch {
 			flex-grow: 100;
 			display: none;
+			position: relative;
 
 			@include breakpoint(tab992) {
 				display: block;
@@ -100,6 +101,38 @@
 					height: length(40);
 					@include flex-center;
 					background: $primary;
+				}
+			}
+
+			.desktop-suggestions {
+				position: absolute;
+				top: 100%;
+				left: 0;
+				@include w100;
+				height: length(440);
+				background: $white;
+				gap: length(4);
+				@include double-radius(bottom, left, 10, bottom, right, 10);
+				padding: length(16) length(20) length(24);
+				overflow-x: hidden;
+				overflow-y: scroll;
+				@extend %animation;
+				@extend %slideUpIn;
+				display: none;
+				z-index: 100;
+
+				&::-webkit-scrollbar {
+					background: transparent;
+					width: length(8);
+				}
+		
+				&::-webkit-scrollbar-thumb {
+					background: $profilebox;
+					@include radius(8);
+				}
+
+				&.active {
+					@include flex-column;
 				}
 			}
 		}

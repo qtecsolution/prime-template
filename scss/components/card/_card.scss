@@ -140,6 +140,49 @@
   }
 }
 
+.card-suggestion {
+  @include flex-center-vert;
+  gap: length(14);
+  background: $white;
+  padding: length(8);
+  cursor: pointer;
+  @include transitionsbackground;
+
+  &-cap {
+    @include square(length(64));
+    @include flex-center;
+    overflow: hidden;
+
+    img {
+      @include wh100;
+      object-fit: contain;
+    }
+  }
+
+  &-details {
+    width: calc(100% - 4.875rem);
+    @include flex-column;
+
+    .suggestion-title {
+      color: $text-primary;
+      @include font-face($primaryFont, style('normal'), size(12), weight('medium'), line-height(16.8, 12));
+      @include text-overflow;
+      
+      @include breakpoint(mobile480) {
+        @include font-face($primaryFont, style('normal'), size(14), weight('medium'), line-height(19.6, 14));
+      }
+    }
+  }
+
+  @include hover {
+    background: $prodboxbg;
+
+    @include breakpoint(tab992) {
+      background: $notifybg;
+    }
+  }
+}
+
 /**=======================================================**
                         CARDS END
 **=======================================================**/
