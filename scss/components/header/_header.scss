@@ -191,7 +191,7 @@
 					@include flex-center;
           @include font-face($primaryFont, style('normal'), size(9), weight('normal'), line-height(9, 9));
 					position: absolute;
-					top: length(10);
+					top: length(12);
 					right: length(-10);
 					padding: length(4);
 					text-align: center;

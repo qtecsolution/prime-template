@@ -900,6 +900,95 @@ select {
   cursor: pointer;
 }
 
+.btn-more {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 0.625rem;
+}
+
+.btn-more .text {
+  color: #384056;
+  font-family: "Roboto";
+  font-style: normal;
+  font-size: 0.875rem;
+  font-weight: normal;
+  line-height: 1.4;
+}
+
+@media screen and (min-width: 62rem) {
+  .btn-more .text {
+    font-family: "Roboto";
+    font-style: normal;
+    font-size: 1rem;
+    font-weight: normal;
+    line-height: 1.4;
+  }
+}
+
+.btn-more .icon {
+  display: inline-block;
+  margin-top: -0.1875rem;
+}
+
+.btn-more:not([disabled]):hover .text {
+  color: #dd3936;
+}
+
+.btn-more:not([disabled]):hover .icon svg path {
+  fill: #dd3936;
+}
+
+.discount-badge {
+  background: #dd3936;
+  color: white;
+  border-top-right-radius: 0.625rem;
+  border-bottom-left-radius: 0.625rem;
+  display: inline-block;
+  font-family: "Roboto";
+  font-style: normal;
+  font-size: 0.875rem;
+  font-weight: normal;
+  line-height: 1.4;
+  padding: 0.5rem 0.875rem;
+  text-align: center;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  height: 2rem;
+  width: 2rem;
+  background: transparent;
+  border: none;
+}
+
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  width: 0;
+  height: 0;
+  content: '';
+  display: none;
+}
+
+.swiper-button-prev svg,
+.swiper-button-next svg {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-button-prev svg path,
+.swiper-button-next svg path {
+  fill: #b0b0b0;
+}
+
+.swiper-button-prev:not([disabled]):hover svg path,
+.swiper-button-next:not([disabled]):hover svg path {
+  fill: #dd3936;
+}
+
 /**=======================================================**
                         BUTTONS END
 **=======================================================**/
@@ -1210,6 +1299,462 @@ select {
 @media screen and (min-width: 62rem) {
   .card-suggestion:not([disabled]):hover {
     background: #f6f7f9;
+  }
+}
+
+.card-event {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 0.75rem;
+  padding: 0rem 1rem 1rem;
+  background: white;
+  border-radius: 0.625rem;
+  border-radius: 0.625rem;
+  position: relative;
+}
+
+.card-event .discount-badge {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 10;
+}
+
+.card-event-header {
+  width: 100%;
+  height: 11.25rem;
+  overflow: hidden;
+}
+
+.card-event-header img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+  -webkit-transition: transform 250ms ease-in-out;
+  -webkit-transition: -webkit-transform 250ms ease-in-out;
+  transition: -webkit-transform 250ms ease-in-out;
+  transition: transform 250ms ease-in-out;
+  transition: transform 250ms ease-in-out, -webkit-transform 250ms ease-in-out;
+}
+
+.card-event-header img:not([disabled]):hover {
+  -webkit-transform: scale(1.05);
+  transform: scale(1.05);
+}
+
+.card-event-body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 0.75rem;
+  text-align: center;
+}
+
+.card-event-body .event-card-title {
+  color: #242424;
+  font-family: "Roboto";
+  font-style: normal;
+  font-size: 0.75rem;
+  font-weight: normal;
+  line-height: 1.4;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 2;
+  height: 2.25rem;
+  -webkit-transition: color 250ms ease-in-out;
+  transition: color 250ms ease-in-out;
+}
+
+@media screen and (min-width: 36rem) {
+  .card-event-body .event-card-title {
+    font-family: "Roboto";
+    font-style: normal;
+    font-size: 0.875rem;
+    font-weight: normal;
+    line-height: 1.4;
+    height: 2.625rem;
+  }
+}
+
+@media screen and (min-width: 62rem) {
+  .card-event-body .event-card-title {
+    font-family: "Roboto";
+    font-style: normal;
+    font-size: 1rem;
+    font-weight: normal;
+    line-height: 1.4;
+    height: 2.8125rem;
+  }
+}
+
+.card-event-body .event-card-title:not([disabled]):hover {
+  color: #dd3936;
+}
+
+.card-event-body .review {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 0.25rem;
+}
+
+.card-event-body .review .reviewcount {
+  font-family: "Roboto";
+  font-style: normal;
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.4;
+  color: #F2B807;
+}
+
+.card-event-body .review .reviewlist {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 0.1875rem;
+}
+
+.card-event-body .review .reviewlist-item {
+  height: 0.625rem;
+  width: 0.625rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  overflow: hidden;
+}
+
+.card-event-body .review .reviewlist-item svg {
+  width: 100%;
+  height: 100%;
+}
+
+.card-event-body .prices {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 0.5rem;
+  text-align: center;
+}
+
+@media screen and (min-width: 62rem) {
+  .card-event-body .prices {
+    gap: 0.75rem;
+  }
+}
+
+.card-event-body .prices .current-price {
+  color: #272726;
+  font-family: "Roboto";
+  font-style: normal;
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+@media screen and (min-width: 62rem) {
+  .card-event-body .prices .current-price {
+    font-family: "Roboto";
+    font-style: normal;
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 1.4;
+  }
+}
+
+.card-event-body .prices .previous-price {
+  color: #616161;
+  font-family: "Roboto";
+  font-style: normal;
+  font-size: 0.875rem;
+  font-weight: normal;
+  line-height: 1.4;
+  text-decoration: line-through;
+}
+
+.card-event-body .prices .previous-price span {
+  color: inherit;
+  font: inherit;
+  text-decoration: line-through;
+}
+
+@media screen and (min-width: 62rem) {
+  .card-event-body .prices .previous-price {
+    font-family: "Roboto";
+    font-style: normal;
+    font-size: 1rem;
+    font-weight: normal;
+    line-height: 1.4;
+  }
+}
+
+.product {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 0.75rem;
+  padding: 0rem 1rem 1rem;
+  background: white;
+  border-radius: 0.625rem;
+  border-radius: 0.625rem;
+}
+
+.product-header {
+  width: 100%;
+  height: 11.25rem;
+  overflow: hidden;
+}
+
+.product-header img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+  -webkit-transition: transform 250ms ease-in-out;
+  -webkit-transition: -webkit-transform 250ms ease-in-out;
+  transition: -webkit-transform 250ms ease-in-out;
+  transition: transform 250ms ease-in-out;
+  transition: transform 250ms ease-in-out, -webkit-transform 250ms ease-in-out;
+}
+
+.product-header img:not([disabled]):hover {
+  -webkit-transform: scale(1.05);
+  transform: scale(1.05);
+}
+
+.product-body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 0.75rem;
+  text-align: center;
+}
+
+.product-body .product-title {
+  color: #242424;
+  font-family: "Roboto";
+  font-style: normal;
+  font-size: 0.75rem;
+  font-weight: normal;
+  line-height: 1.4;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 2;
+  height: 2.25rem;
+  -webkit-transition: color 250ms ease-in-out;
+  transition: color 250ms ease-in-out;
+}
+
+@media screen and (min-width: 36rem) {
+  .product-body .product-title {
+    font-family: "Roboto";
+    font-style: normal;
+    font-size: 0.875rem;
+    font-weight: normal;
+    line-height: 1.4;
+    height: 2.625rem;
+  }
+}
+
+@media screen and (min-width: 62rem) {
+  .product-body .product-title {
+    font-family: "Roboto";
+    font-style: normal;
+    font-size: 1rem;
+    font-weight: normal;
+    line-height: 1.4;
+    height: 2.8125rem;
+  }
+}
+
+.product-body .product-title:not([disabled]):hover {
+  color: #dd3936;
+}
+
+.product-body .review {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 0.25rem;
+}
+
+.product-body .review .reviewcount {
+  font-family: "Roboto";
+  font-style: normal;
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.4;
+  color: #F2B807;
+}
+
+.product-body .review .reviewlist {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 0.1875rem;
+}
+
+.product-body .review .reviewlist-item {
+  height: 0.625rem;
+  width: 0.625rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  overflow: hidden;
+}
+
+.product-body .review .reviewlist-item svg {
+  width: 100%;
+  height: 100%;
+}
+
+.product-body .prices {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 0.5rem;
+  text-align: center;
+}
+
+@media screen and (min-width: 62rem) {
+  .product-body .prices {
+    gap: 0.75rem;
+  }
+}
+
+.product-body .prices .current-price {
+  color: #272726;
+  font-family: "Roboto";
+  font-style: normal;
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+@media screen and (min-width: 62rem) {
+  .product-body .prices .current-price {
+    font-family: "Roboto";
+    font-style: normal;
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 1.4;
+  }
+}
+
+.product-body .prices .previous-price {
+  color: #616161;
+  font-family: "Roboto";
+  font-style: normal;
+  font-size: 0.875rem;
+  font-weight: normal;
+  line-height: 1.4;
+  text-decoration: line-through;
+}
+
+.product-body .prices .previous-price span {
+  color: inherit;
+  font: inherit;
+  text-decoration: line-through;
+}
+
+@media screen and (min-width: 62rem) {
+  .product-body .prices .previous-price {
+    font-family: "Roboto";
+    font-style: normal;
+    font-size: 1rem;
+    font-weight: normal;
+    line-height: 1.4;
   }
 }
 
@@ -2390,7 +2935,7 @@ select {
   font-weight: normal;
   line-height: 1;
   position: absolute;
-  top: 0.625rem;
+  top: 0.75rem;
   right: -0.625rem;
   padding: 0.25rem;
   text-align: center;
@@ -3826,14 +4371,373 @@ select {
                     HOME-BANNER SECTION END
 **=======================================================**/
 /**=======================================================**
-                HOME-FEATURES SECTION START
+                  EVENT-SECTION START
 **=======================================================**/
+.event {
+  padding: 0rem 1rem 3rem;
+}
+
+@media screen and (min-width: 62rem) {
+  .event {
+    padding: 2rem 0.5rem 4rem;
+  }
+}
+
+.event-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 1rem;
+}
+
+.event-header {
+  background: white;
+  border-radius: 0.625rem;
+  border-radius: 0.625rem;
+  padding: 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 0.75rem;
+}
+
+@media screen and (min-width: 48rem) {
+  .event-header {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+}
+
+.event-header .eventinfo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 0.25rem;
+  width: 100%;
+  -webkit-box-ordinal-group: 2;
+      -ms-flex-order: 1;
+          order: 1;
+}
+
+@media screen and (min-width: 48rem) {
+  .event-header .eventinfo {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    gap: 3rem;
+    -webkit-box-ordinal-group: 1;
+        -ms-flex-order: 0;
+            order: 0;
+    width: auto;
+    margin-right: auto;
+  }
+}
+
+@media screen and (min-width: 75rem) {
+  .event-header .eventinfo {
+    gap: 5rem;
+  }
+}
+
+.event-header .eventinfo .event-title {
+  color: black;
+  font-family: "Roboto";
+  font-style: normal;
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 1.4;
+  display: none;
+}
+
+@media screen and (min-width: 48rem) {
+  .event-header .eventinfo .event-title {
+    display: block;
+  }
+}
+
+.event-header .eventinfo .event-timer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 0.375rem;
+}
+
+@media screen and (min-width: 48rem) {
+  .event-header .eventinfo .event-timer {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    gap: 0.875rem;
+  }
+}
+
+.event-header .eventinfo .event-timer .timer-title {
+  font-family: "Roboto";
+  font-style: normal;
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+@media screen and (min-width: 62rem) {
+  .event-header .eventinfo .event-timer .timer-title {
+    font-family: "Roboto";
+    font-style: normal;
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 1.4;
+  }
+}
+
+.event-header .eventinfo .event-timer .timer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.event-header .eventinfo .event-timer .timer .days,
+.event-header .eventinfo .event-timer .timer .hours,
+.event-header .eventinfo .event-timer .timer .minutes,
+.event-header .eventinfo .event-timer .timer .seconds {
+  background: white;
+  color: #dd3936;
+  height: 2.25rem;
+  width: 2.25rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border: solid 0.0625rem #dd3936;
+  border-radius: 0.3125rem;
+  border-radius: 0.3125rem;
+  font-family: "Roboto";
+  font-style: normal;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1;
+}
+
+.event-header .eventinfo .event-timer .timer .divider {
+  font-family: "Roboto";
+  font-style: normal;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1;
+  color: #dd3936;
+  margin-inline: 0.25rem;
+}
+
+.event-header .more {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  -webkit-box-ordinal-group: 1;
+      -ms-flex-order: 0;
+          order: 0;
+}
+
+@media screen and (min-width: 48rem) {
+  .event-header .more {
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
+    width: auto;
+    margin-left: auto;
+  }
+}
+
+.event-header .more .event-title {
+  color: black;
+  font-family: "Roboto";
+  font-style: normal;
+  font-size: 1.5rem;
+  font-weight: normal;
+  line-height: 1.4;
+  display: block;
+}
+
+@media screen and (min-width: 48rem) {
+  .event-header .more .event-title {
+    display: none;
+  }
+}
+
+.event-body {
+  padding: 1.25rem 0rem;
+}
+
 /**=======================================================**
-                HOME-FEATURES SECTION END
+                  EVENT-SECTION END
 **=======================================================**/
 /**=======================================================**
                     HOME-VIDEO SECTION START
 **=======================================================**/
+.home-products {
+  padding: 0rem 1rem 3rem;
+}
+
+@media screen and (min-width: 62rem) {
+  .home-products {
+    padding: 2rem 0.5rem 4rem;
+  }
+}
+
+.home-products-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 2rem;
+}
+
+.home-products-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+@media screen and (min-width: 48rem) {
+  .home-products-header {
+    padding-right: 0.5rem;
+  }
+}
+
+.home-products-header .home-products-title {
+  color: black;
+  font-family: "Roboto";
+  font-style: normal;
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+@media screen and (min-width: 48rem) {
+  .home-products-header .home-products-title {
+    font-family: "Roboto";
+    font-style: normal;
+    font-size: 1.75rem;
+    font-weight: 600;
+    line-height: 1.4;
+  }
+}
+
+.home-products-body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 1rem;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+@media screen and (min-width: 48rem) {
+  .home-products-body {
+    gap: 1.5rem;
+  }
+}
+
+.home-products-body .cardlink {
+  width: 47.5%;
+}
+
+@media screen and (min-width: 36rem) {
+  .home-products-body .cardlink {
+    width: 46.5%;
+  }
+}
+
+@media screen and (min-width: 48rem) {
+  .home-products-body .cardlink {
+    width: 30.75%;
+  }
+}
+
+@media screen and (min-width: 62rem) {
+  .home-products-body .cardlink {
+    width: 31.5%;
+  }
+}
+
+@media screen and (min-width: 75rem) {
+  .home-products-body .cardlink {
+    width: 23.25%;
+  }
+}
+
+@media screen and (min-width: 87.5rem) {
+  .home-products-body .cardlink {
+    width: 18.5%;
+  }
+}
+
 /**=======================================================**
                     HOME-VIDEO SECTION END
 **=======================================================**/

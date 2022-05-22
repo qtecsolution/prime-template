@@ -1,6 +1,6 @@
 up({
 
-    bottom: '2.75rem',
+    bottom: '2rem',
     right: '1.5rem',
     width: '2.75rem',
     height: '2.75rem',

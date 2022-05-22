@@ -53,6 +53,7 @@ $profilebox: hsl(0, 0%, 77%); //#C4C4C4
 $profilebox-2: hsl(0, 0%, 92%); //#EBEBEB
 
 $submenubg: #F7FAFC;
+$ratingColor: #F2B807;
 
 $red: #c32a01; // #c32a01
 $red2: #ae403c; // #c32a01
@@ -82,6 +83,8 @@ $shadow-2: #42474c59;
 =======================================================**/
 $dropdownshadow: drop-shadow(0rem .9375rem 1.875rem rgba($black, 0.15));
 $box-shadow-1: 0 .5rem 3rem 0 $dividerbg, 0 .25rem .5rem 0 $shadow-1, 0 0 .0625rem 0 $shadow-2;
+$box-shadow-2: drop-shadow(0 .9375rem 1.875rem rgba($black, 0.15));
+
 
 /**=====================================================**
                         TEXT-SHADOWS
