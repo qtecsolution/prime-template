@@ -2420,7 +2420,7 @@ select {
 .header-nav .headerlist .notification-item .notificationdropdown {
   position: absolute;
   top: 100%;
-  right: 0rem;
+  right: -1.5rem;
   background: whitesmoke;
   -webkit-filter: drop-shadow(0rem 0.9375rem 1.875rem rgba(0, 0, 0, 0.15));
           filter: drop-shadow(0rem 0.9375rem 1.875rem rgba(0, 0, 0, 0.15));
@@ -3023,6 +3023,202 @@ select {
       -ms-flex-direction: column;
           flex-direction: column;
   gap: 0.875rem;
+}
+
+.offcanvas-body .mobilemenu {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 0.5rem;
+}
+
+.offcanvas-body .mobilemenu-item .accordion-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.offcanvas-body .mobilemenu-item .accordion-header .link {
+  width: calc(100% - 2.5rem);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 0.875rem;
+  padding-left: 0.75rem;
+}
+
+.offcanvas-body .mobilemenu-item .accordion-header .link .icon {
+  height: 1.5rem;
+  width: 1.5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  overflow: hidden;
+}
+
+.offcanvas-body .mobilemenu-item .accordion-header .link .icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.offcanvas-body .mobilemenu-item .accordion-header .link .itemtext {
+  width: calc(100% - 1.5rem);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.offcanvas-body .mobilemenu-item .accordion-header .link .itemtext .text {
+  color: #242424;
+  font-family: "Roboto";
+  font-style: normal;
+  font-size: 0.75rem;
+  font-weight: normal;
+  line-height: 1.4;
+  max-width: 99%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.offcanvas-body .mobilemenu-item .accordion-header .accordion-button {
+  height: 2.5rem;
+  width: 2.5rem;
+}
+
+.offcanvas-body .mobilemenu-item .accordion-body .accordion-header .sublink {
+  width: calc(100% - 2.5rem);
+}
+
+.offcanvas-body .mobilemenu-item .accordion-body .accordion-header .sublink .text {
+  color: #242424;
+  font-family: "Roboto";
+  font-style: normal;
+  font-size: 0.75rem;
+  font-weight: normal;
+  line-height: 1.4;
+  max-width: 99%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.offcanvas-body .mobilemenu-item .accordion-body .accordion-header .accordion-button {
+  height: 2.5rem;
+  width: 2.5rem;
+}
+
+.offcanvas-body .mobilemenu-item .accordion-body .accordion-body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 0.25rem;
+}
+
+.offcanvas-body .mobilemenu-item .accordion-body .accordion-body .subsublink {
+  display: inline-block;
+  width: 100%;
+  padding: 0.25rem 0rem;
+  color: #242424;
+  font-family: "Roboto";
+  font-style: normal;
+  font-size: 0.75rem;
+  font-weight: normal;
+  line-height: 1.4;
+  max-width: 99%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.offcanvas-body .mobilemenu-item .accordion-body .sublink .text {
+  color: #242424;
+  font-family: "Roboto";
+  font-style: normal;
+  font-size: 0.75rem;
+  font-weight: normal;
+  line-height: 1.4;
+  max-width: 99%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.offcanvas-body .mobilemenu-link {
+  background: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 0.875rem;
+  padding: 0.5rem;
+}
+
+.offcanvas-body .mobilemenu-link .icon {
+  height: 1.5rem;
+  width: 1.5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  overflow: hidden;
+}
+
+.offcanvas-body .mobilemenu-link .icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.offcanvas-body .mobilemenu-link .itemtext {
+  width: calc(100% - 1.5rem);
+}
+
+.offcanvas-body .mobilemenu-link .itemtext .text {
+  color: #242424;
+  font-family: "Roboto";
+  font-style: normal;
+  font-size: 0.75rem;
+  font-weight: normal;
+  line-height: 1.4;
+  max-width: 99%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: inline-block;
+  margin-top: 0.25rem;
 }
 
 .offcanvas-footer {

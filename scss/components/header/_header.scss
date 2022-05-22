@@ -218,7 +218,7 @@
 				.notificationdropdown {
 					position: absolute;
 					top: 100%;
-					right: length(0);
+					right: length(-24);
 					background: $copyrightbg;
 					filter: $dropdownshadow;
 					min-width: length(300);
