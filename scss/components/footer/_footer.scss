@@ -3,8 +3,12 @@
 =====================================================**/
 
 .footer {
-  padding: length(48) length(8) length(0);
+  padding: length(48) length(8) length(60);
   background: $white;
+
+  @include breakpoint(tab992) {
+    padding: length(48) length(8) length(0);
+  }
 
   &-top {
     padding: length(0) length(8) length(48);

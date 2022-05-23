@@ -7,6 +7,7 @@
 	@include w100;
 	@include flex-center-vert;
 	transition: top $time;
+	padding: length(0) length(8);
 
 	&.sticky-header {
 		position: fixed;
@@ -48,11 +49,11 @@
 		.logo {
 			order: 1;
 			width: length(130);
-			height: length(48);
+			height: length(32);
 			@include flex-center;
 			overflow: hidden;
-
-			@include breakpoint(mobile360) {
+			
+			@include breakpoint(mobile576) {
 				width: length(140);
 				height: length(48);
 			}
@@ -169,15 +170,8 @@
 				}
 
 				.icon {
-					@include square(length(18));
+					@include square(length(24));
 					@include flex-center;
-
-					@include breakpoint(mobile360) {
-					}
-
-					@include breakpoint(mobile768) {
-						@include square(length(25));
-					}
 
 					svg {
 						@include wh100;
@@ -411,11 +405,13 @@
 				}
 			}
 
-			.search-item {
-				display: block;
-				
+			.wishlist-item,
+			.notification-item,
+			.user-item {
+				display: none;
+
 				@include breakpoint(tab992) {
-					display: none;
+					display: block;
 				}
 			}
 		}
